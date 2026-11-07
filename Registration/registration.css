@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+/* Լեզվաբառարանի ընտրացանկի ընդհանուր կարգավորումներ */
+#language-selector {
+  text-align: right; /* Դրա համար որ մենյուի աջ կողմում լինի */
+  padding: 10px; /* Հավասարեցված լինի */
+  position: fixed; /* Բառարանը կլինի կայուն */
+  top: 10px; /* Տարբերում ենք վերին մասից */
+  right: 10px; /* Դասավորում ենք աջ կողմում */
+  z-index: 1000; /* Համոզվեք, որ ընտրացանկը կմնա վրա այլ տարրերից */
+  background-color: #fff; /* Աղավաղվող ֆոն */
+  border-radius: 5px; /* Ծայրերը կլորացրած */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ստեղծում ենք փոքր շադոու */
+}
+
+/* Ցուցակը ձևավորելու համար */
+#language-selector select {
+  font-size: 14px; /* Թվարկի մեջ տառի չափը */
+  padding: 5px 10px; /* Պիտանի տարածություն */
+  border: 1px solid #ccc; /* Մեղմ սահման */
+  border-radius: 4px; /* Կլորացված ծայրեր */
+  background-color: #f5f5f5; /* Լավ տեսանելի ֆոն */
+  cursor: pointer; /* Իշխանություն ցույց տալ */
+}
+
+/* Ցուցակը մկնիկի վրա դնելու դեպքում */
+#language-selector select:hover {
+  border-color: #888; /* Ցուցակի վրա անցում */
+  background-color: #f0f0f0;
+}
+
+/* Մոբիլ տարբերակների համար */
+@media screen and (max-width: 768px) {
+  #language-selector {
+    top: 20px; /* Վերադասավորում ենք մոբիլ տարբերակների համար */
+    right: 20px;
+  }
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 30px;
+  height: 3px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  border-radius: 5px;
+}
+
+#error-message {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 90%;
+  padding: 15px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 15px;
+  display: none;
+  z-index: 1;
+}
+
+form {
+  margin-top: 20px;
+}
+
+.user-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.input-box {
+  flex: 1 1 calc(50% - 20px);
+  display: flex;
+  flex-direction: column;
+}
+
+.input-box span.details {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.input-box input {
+  height: 45px;
+  padding: 0 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.input-box input:focus,
+.input-box input:valid {
+  border-color: #9b59b6;
+}
+
+.gender-details {
+  margin: 20px 0;
+}
+
+.gender-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.category {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.category .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  margin-right: 10px;
+  transition: 0.3s ease;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three {
+  background: #9b59b6;
+  border-color: #d9d9d9;
+}
+
+.password-group {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.password-group .input-box {
+  flex: 1;
+}
+
+.button {
+  margin-top: 30px;
+}
+
+.button input {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.button input:hover {
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+/* Responsive */
+@media (max-width: 584px) {
+  .user-details {
+    flex-direction: column;
+  }
+
+  .password-group {
+    flex-direction: column;
+  }
+
+  .container {
+    padding: 20px;
+  }
+}

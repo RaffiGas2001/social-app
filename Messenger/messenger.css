@@ -1,0 +1,194 @@
+/* Գունային դիզայն՝ նույնը ինչ profile-ում (gradient background) */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+/* Լեզվաբառարանի ընտրացանկի ընդհանուր կարգավորումներ */
+#language-selector {
+  text-align: right; /* Դրա համար որ մենյուի աջ կողմում լինի */
+  padding: 10px; /* Հավասարեցված լինի */
+  position: fixed; /* Բառարանը կլինի կայուն */
+  top: 10px; /* Տարբերում ենք վերին մասից */
+  right: 10px; /* Դասավորում ենք աջ կողմում */
+  z-index: 1000; /* Համոզվեք, որ ընտրացանկը կմնա վրա այլ տարրերից */
+  background-color: #fff; /* Աղավաղվող ֆոն */
+  border-radius: 5px; /* Ծայրերը կլորացրած */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ստեղծում ենք փոքր շադոու */
+}
+
+/* Ցուցակը ձևավորելու համար */
+#language-selector select {
+  font-size: 14px; /* Թվարկի մեջ տառի չափը */
+  padding: 5px 10px; /* Պիտանի տարածություն */
+  border: 1px solid #ccc; /* Մեղմ սահման */
+  border-radius: 4px; /* Կլորացված ծայրեր */
+  background-color: #f5f5f5; /* Լավ տեսանելի ֆոն */
+  cursor: pointer; /* Իշխանություն ցույց տալ */
+}
+
+/* Ցուցակը մկնիկի վրա դնելու դեպքում */
+#language-selector select:hover {
+  border-color: #888; /* Ցուցակի վրա անցում */
+  background-color: #f0f0f0;
+}
+
+/* Մոբիլ տարբերակների համար */
+@media screen and (max-width: 768px) {
+  #language-selector {
+    top: 20px; /* Վերադասավորում ենք մոբիլ տարբերակների համար */
+    right: 20px;
+  }
+}
+
+  .default-mode {
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+}
+  
+  .light-mode {
+    background: linear-gradient(to right, #ffffff, #e0e0e0);
+  }
+  
+  .dark-mode {
+    background: linear-gradient(to right, #1e1e1e, #0d0d0d);
+  }
+  
+  /* Messenger page container */
+  #messenger-container {
+    width: 90%;
+    max-width: 900px;
+    height: 90vh;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  #closeMessenger {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  #closeMessenger:hover {
+    background-color: #ff1a1a;
+  }
+  
+  /* Search bar */
+  .search-user {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .search-user input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  
+  /* Search Results */
+  #searchResults {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  #searchResults li {
+    padding: 12px;
+    background-color: #f5f5f5;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  #searchResults li:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Chat area */
+  .chat-area {
+    flex: 1;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: #fdfdfd;
+    margin-bottom: 20px;
+  }
+  
+  .chat-area .message {
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    max-width: 75%;
+    font-size: 15px;
+  }
+  
+  .chat-area .sent {
+    background-color: #dcf8c6;
+    margin-left: auto;
+    text-align: right;
+  }
+  
+  .chat-area .received {
+    background-color: #eeeeee;
+    text-align: left;
+  }
+  
+  /* Message form */
+  .message-form {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .message-form input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  
+  .message-form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .message-form button:hover {
+    background-color: #218838;
+  }
+  

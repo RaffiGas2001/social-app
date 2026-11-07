@@ -1,0 +1,154 @@
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Լեզվաբառարանի ընտրացանկի ընդհանուր կարգավորումներ */
+#language-selector {
+  text-align: right; /* Դրա համար որ մենյուի աջ կողմում լինի */
+  padding: 10px; /* Հավասարեցված լինի */
+  position: fixed; /* Բառարանը կլինի կայուն */
+  top: 10px; /* Տարբերում ենք վերին մասից */
+  right: 10px; /* Դասավորում ենք աջ կողմում */
+  z-index: 1000; /* Համոզվեք, որ ընտրացանկը կմնա վրա այլ տարրերից */
+  background-color: #fff; /* Աղավաղվող ֆոն */
+  border-radius: 5px; /* Ծայրերը կլորացրած */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ստեղծում ենք փոքր շադոու */
+}
+
+/* Ցուցակը ձևավորելու համար */
+#language-selector select {
+  font-size: 14px; /* Թվարկի մեջ տառի չափը */
+  padding: 5px 10px; /* Պիտանի տարածություն */
+  border: 1px solid #ccc; /* Մեղմ սահման */
+  border-radius: 4px; /* Կլորացված ծայրեր */
+  background-color: #f5f5f5; /* Լավ տեսանելի ֆոն */
+  cursor: pointer; /* Իշխանություն ցույց տալ */
+}
+
+/* Ցուցակը մկնիկի վրա դնելու դեպքում */
+#language-selector select:hover {
+  border-color: #888; /* Ցուցակի վրա անցում */
+  background-color: #f0f0f0;
+}
+
+/* Մոբիլ տարբերակների համար */
+@media screen and (max-width: 768px) {
+  #language-selector {
+    top: 20px; /* Վերադասավորում ենք մոբիլ տարբերակների համար */
+    right: 20px;
+  }
+}
+
+.main {
+  height: 100vh;
+  width: 100%;
+}
+.wrapper,
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.slide {
+  overflow: hidden;
+}
+.slide::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+.slide .image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.slide .image-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+  padding: 10px 0px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.image-data span.text {
+  font-size: 25px;
+  font-weight: 400;
+  color: #fff;
+  font-family: 'Anton', sans-serif;
+  color: black;
+}
+.image-data h2 {
+  font-size: 50px;
+  font-weight: 600;
+  /* color: #fff; */
+}
+a.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #333;
+  background: #fff;
+  text-decoration: none;
+  margin-top: 25px;
+  transition: all 0.3s ease;
+}
+a.button:hover {
+  color: #fff;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);;
+}
+
+/* swiper button css */
+.nav-btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+.swiper-button-next {
+  right: 50px;
+  background-color: black;
+}
+.swiper-button-prev {
+  left: 50px;
+  background-color: black;
+}
+.nav-btn::before,
+.nav-btn::after {
+  font-size: 25px;
+  color: #fff;
+}
+.swiper-pagination-bullet {
+  opacity: 1;
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  visibility: hidden;
+}
+.swiper-pagination-bullet-active {
+  border: 2px solid #fff;
+  background-color: #c87e4f;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-btn {
+    visibility: hidden;
+  }
+  .swiper-pagination-bullet {
+    visibility: visible;
+  }
+}

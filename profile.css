@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Լեզվաբառարանի ընտրացանկի ընդհանուր կարգավորումներ */
+#language-selector {
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ցուցակը ձևավորելու համար */
+#language-selector select {
+  font-size: 14px; /* Թվարկի մեջ տառի չափը */
+  padding: 5px 10px; /* Պիտանի տարածություն */
+  border: 1px solid #ccc; /* Մեղմ սահման */
+  border-radius: 4px; /* Կլորացված ծայրեր */
+  background-color: #f5f5f5; /* Լավ տեսանելի ֆոն */
+  cursor: pointer; /* Իշխանություն ցույց տալ */
+}
+
+/* Ցուցակը մկնիկի վրա դնելու դեպքում */
+#language-selector select:hover {
+  border-color: #888; /* Ցուցակի վրա անցում */
+  background-color: #f0f0f0;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+body.light-mode .profile-card {
+  background-color: #f5f5f5;
+  color: #000000;
+}
+body.light-mode .buttons .btn{
+  background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+  color: #000;
+}
+body.light-mode .modal-content{
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light-mode button {
+  background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+  color: #000;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #000000;
+}
+body.dark-mode label{
+  color: white;
+}
+body.dark-mode .profile-card {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+body.dark-mode .buttons .btn {
+  background: linear-gradient(to right, #434343, #000000);
+  color: #fff;
+}
+body.dark-mode .modal-content{
+  background-color: #121212;
+  color: #ffffff;
+}
+body.dark-mode button {
+  background: linear-gradient(to right, #434343, #000000);
+  color: #fff;
+}
+
+body.default-mode {
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: #000000;
+}
+body.default-mode label{
+  color: white;
+}
+body.default-mode .profile-card {
+  background-color: rgba(255,255,255,0.1);
+  color: #ffffff;
+}
+body.default-mode .buttons .btn {
+  background: linear-gradient(to left, #33ccff 0%, #ff99cc 100%);
+  color: #fff;
+}
+
+body.default-mode .modal-content{
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: #ffffff;
+}
+
+body.default-mode button {
+  background: linear-gradient(to left, #33ccff 0%, #ff99cc 100%);
+  color: #fff;
+}
+
+/* Dropdown Theme Selector */
+.selector-container {
+  position: fixed;
+  top: 10px;
+  left: 10px; /* Գտնվելու տեղը ձախ կողմում */
+  display: flex;
+  gap: 20px; /* Ստեղծում ենք տարբերություն, որպեսզի դրանք չհայտնվեն իրար վրա */
+  z-index: 1000;
+  flex-direction: row; /* Համալիր դասավորություն */
+}
+
+.theme-selector {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+}
+.theme-selector select {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 25px;
+  padding: 30px;
+  border: 1px solid #ffffff40;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+.image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+}
+.image .profile-pic{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+.data{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+.data h2{
+  font-size: 33px;
+  font-weight: 600;
+}
+span{
+  font-size: 18px;
+}
+.row{
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.row .info{
+  text-align: center;
+  padding: 0 20px;
+}
+.buttons{
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.buttons .btn{
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 8px 25px;
+  border-radius: 25px;
+  font-size: 15px;
+  white-space: nowrap;
+  background: linear-gradient(to left, #33ccff 0%, #ff99cc 100%);
+}
+.buttons .btn:hover{
+  box-shadow: inset 0 5px 20px rgba(0,0,0,0.4);
+}
+
+@media screen and (max-width: 768px) {
+  .selector-container {
+    top: 15px;
+    left: 15px;
+    flex-direction: column; /* Մոբիլ տարբերակներում դասավորում ենք ուղղահայաց */
+    gap: 10px;
+  }
+}
+
+/* Մոբիլ տարբերակների համար */
+@media screen and (max-width: 768px) {
+  #language-selector {
+    top: 20px; /* Վերադասավորում ենք մոբիլ տարբերակների համար */
+    right: 20px;
+  }
+}

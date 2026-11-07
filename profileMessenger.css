@@ -1,0 +1,210 @@
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap'); */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  overflow: hidden;
+  background: #f2f2f2;
+}
+
+/* Լեզվաբառարանի ընտրացանկի ընդհանուր կարգավորումներ */
+#language-selector {
+  text-align: right; /* Դրա համար որ մենյուի աջ կողմում լինի */
+  padding: 10px; /* Հավասարեցված լինի */
+  position: fixed; /* Բառարանը կլինի կայուն */
+  top: 10px; /* Տարբերում ենք վերին մասից */
+  right: 10px; /* Դասավորում ենք աջ կողմում */
+  z-index: 1000; /* Համոզվեք, որ ընտրացանկը կմնա վրա այլ տարրերից */
+  background-color: #fff; /* Աղավաղվող ֆոն */
+  border-radius: 5px; /* Ծայրերը կլորացրած */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ստեղծում ենք փոքր շադոու */
+}
+
+/* Ցուցակը ձևավորելու համար */
+#language-selector select {
+  font-size: 14px; /* Թվարկի մեջ տառի չափը */
+  padding: 5px 10px; /* Պիտանի տարածություն */
+  border: 1px solid #ccc; /* Մեղմ սահման */
+  border-radius: 4px; /* Կլորացված ծայրեր */
+  background-color: #f5f5f5; /* Լավ տեսանելի ֆոն */
+  cursor: pointer; /* Իշխանություն ցույց տալ */
+}
+
+/* Ցուցակը մկնիկի վրա դնելու դեպքում */
+#language-selector select:hover {
+  border-color: #888; /* Ցուցակի վրա անցում */
+  background-color: #f0f0f0;
+}
+
+/* Մոբիլ տարբերակների համար */
+@media screen and (max-width: 768px) {
+  #language-selector {
+    top: 20px; /* Վերադասավորում ենք մոբիլ տարբերակների համար */
+    right: 20px;
+  }
+}
+
+#wrapper {
+  width: 350px;
+  background: #ffffff;
+  padding: 20px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  display: none;
+  z-index: 100;
+}
+
+.head-text {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.search-user {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.search-user input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+}
+
+.search-user button {
+  padding: 8px 12px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.chat-area {
+  height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.message {
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+.message.sent {
+  background: #dcf8c6;
+  align-self: flex-end;
+  text-align: right;
+  margin-left: auto;
+}
+
+.message.received {
+  background: #eeeeee;
+  align-self: flex-start;
+}
+
+.message-form {
+  display: flex;
+  gap: 10px;
+}
+
+.message-form input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+}
+
+.message-form button {
+  padding: 8px 12px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Ավելացված նոր փոփոխություններ */
+#searchResults li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+#searchResults li:hover {
+  background-color: #f1f1f1;
+}
+
+/* Popup modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.modal-content h3 {
+  margin-bottom: 20px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(to left, #33ccff 0%, #ff99cc 100%);
+  color: white;
+}
+
+.modal-buttons button:hover {
+  opacity: 0.9;
+}

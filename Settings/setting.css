@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Ընդհանուր կազմավորում */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.default-mode {
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+}
+
+.light-mode {
+  background: linear-gradient(to right, #ffffff, #e0e0e0);
+}
+
+.dark-mode {
+  background: linear-gradient(to right, #1e1e1e, #0d0d0d);
+}
+
+/* Լեզվաբառարանի ընտրացանկի ընդհանուր կարգավորումներ */
+#language-selector {
+  text-align: right; /* Դրա համար որ մենյուի աջ կողմում լինի */
+  padding: 10px; /* Հավասարեցված լինի */
+  position: fixed; /* Բառարանը կլինի կայուն */
+  top: 10px; /* Տարբերում ենք վերին մասից */
+  right: 10px; /* Դասավորում ենք աջ կողմում */
+  z-index: 1000; /* Համոզվեք, որ ընտրացանկը կմնա վրա այլ տարրերից */
+  background-color: #fff; /* Աղավաղվող ֆոն */
+  border-radius: 5px; /* Ծայրերը կլորացրած */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ստեղծում ենք փոքր շադոու */
+}
+
+/* Ցուցակը ձևավորելու համար */
+#language-selector select {
+  font-size: 14px; /* Թվարկի մեջ տառի չափը */
+  padding: 5px 10px; /* Պիտանի տարածություն */
+  border: 1px solid #ccc; /* Մեղմ սահման */
+  border-radius: 4px; /* Կլորացված ծայրեր */
+  background-color: #f5f5f5; /* Լավ տեսանելի ֆոն */
+  cursor: pointer; /* Իշխանություն ցույց տալ */
+}
+
+/* Ցուցակը մկնիկի վրա դնելու դեպքում */
+#language-selector select:hover {
+  border-color: #888; /* Ցուցակի վրա անցում */
+  background-color: #f0f0f0;
+}
+
+/* Մոբիլ տարբերակների համար */
+@media screen and (max-width: 768px) {
+  #language-selector {
+    top: 20px; /* Վերադասավորում ենք մոբիլ տարբերակների համար */
+    right: 20px;
+  }
+}
+
+/* Դիզայնի հիմնական կաում */
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-image: url(../Images/back.jpg); */
+  /* background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; */
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px; /* Փոքրացված լայնությունը */
+  width: 100%;
+  border-radius: 20px; /* Փոքրացված անկյունները */
+  padding: 20px; /* Փոքրացված padding-ը */
+  border: 1px solid #ffffff40;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Փոքրացված ստվեր */
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.profile-card h2 {
+  margin-bottom: 15px; /* Փոքրացված հեռավորությունը */
+  color: #333;
+  font-size: 22px; /* Փոքրացված տառատեսակը */
+}
+
+.profile-card input {
+  width: 100%;
+  padding: 8px; /* Փոքրացված padding-ը */
+  margin: 8px 0; /* Փոքրացված հեռավորությունը */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px; /* Փոքրացված տառատեսակը */
+}
+
+.profile-card input[type="file"] {
+  padding: 4px;
+  font-size: 13px; /* Փոքրացված տառատեսակը */
+}
+
+.profile-card label {
+  color: #333;
+  font-size: 13px; /* Փոքրացված տառատեսակը */
+}
+
+.profile-card .buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 15px; /* Փոքրացված հեռավորությունը */
+}
+
+.profile-card .buttons .btn {
+  text-decoration: none;
+  color: white;
+  background-color: #4CAF50;
+  padding: 8px 15px; /* Փոքրացված padding-ը */
+  border-radius: 5px;
+  text-align: center;
+  width: 48%;
+}
+
+.profile-card .buttons .btn:hover {
+  background-color: #45a049;
+}
+
+.profile-card input[type="submit"] {
+  background-color: #2196F3;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px 15px; /* Փոքրացված padding-ը */
+}
+
+.profile-card input[type="submit"]:hover {
+  background-color: #0b7dda;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .profile-card {
+    padding: 15px;
+    width: 90%;
+  }
+
+  .profile-card .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .profile-card .buttons .btn {
+    width: 100%;
+  }
+}
+
+/* Ավելին՝ registration-ի էջի հատուկ մաքուր տեսք */
+body.registration .profile-card {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+body.registration .profile-card input[type="submit"] {
+  background-color: #FF5722;
+}
+
+body.registration .profile-card input[type="submit"]:hover {
+  background-color: #e64a19;
+}
